@@ -54,8 +54,8 @@ class mysql::server (
   Class['mysql::server::root_password'] -> Mysql::Db <| |>
 
   include '::mysql::server::config'
-  include '::mysql::server::install'
   include '::mysql::server::binarylog'
+  include '::mysql::server::install'
   include '::mysql::server::installdb'
   include '::mysql::server::service'
   include '::mysql::server::root_password'
@@ -77,8 +77,8 @@ class mysql::server (
 
   Anchor['mysql::server::start'] ->
   Class['mysql::server::config'] ->
-  Class['mysql::server::install'] ->
   Class['mysql::server::binarylog'] ->
+  Class['mysql::server::install'] ->
   Class['mysql::server::installdb'] ->
   Class['mysql::server::service'] ->
   Class['mysql::server::root_password'] ->
